@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Welcome to Eats Search!
+	</title>
+
+	
+	<link rel="stylesheet" type="text/css" href="./searchbar_style.css">
+</head>
+
+<body>
+
+
+	<input id="searchbar" onkeyup="foodSearch()" type="text"
+		name="search" placeholder="What would you like to eat today?">
+
+
+	<ul id='list'>
+		<li class="food">Chicken Wings</li>
+		<li class="food">Mozarella Sticks</li>
+		<li class="food">French Fries</li>
+		<li class="food">Burger</li>
+		<li class="food">Chicken Burrito</li>
+		<li class="food">Lo Mein</li>
+		<li class="food">Egg Roll</li>
+		<li class="food">Chicken Bowl</li>
+		<li class="food">Sushi</li>
+		<li class="food">Salmon Roll</li>
+		<li class="food">Quessadila</li>
+	</ul>
+
+
+	<script type= "text/javascript">
+
+				function foodSearch() {
+					let input = document.getElementById('searchbar').value		//Retrieves value enetered on the search bar by user
+					input=input.toUpperCase();																//Converts to lower case to avoid ambiguity
+					let x = document.getElementsByClassName('food');					//Retrieves the list of food under class name 'food'
+
+					for (i = 0; i < x.length; i++) {
+						if (x[i].innerHTML.toUpperCase().includes(input)) {		//Check to see if the search is in the list
+							x[i].style.display="list-item";
+						}
+						else {
+							x[i].style.display="none";
+						}
+					}
+				}
+	</script>
+</body>
+
+</html>

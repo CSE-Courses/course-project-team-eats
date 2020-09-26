@@ -22,7 +22,7 @@
 }
 
 body{
-	background:linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url("/Users/rakshitdwivedi/Desktop/Team-Eats/Pictures/searchpage_image2.jpg");
+	background:linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url("searchpage_image2.jpg");
 	background-size: cover;
 	background-color: #FFFFFF;
 	height: 100%;

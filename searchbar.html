@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+	<meta charset="utf-8">
 	<title>
 		Welcome to Eats Search!
 	</title>
-
-	
-	<link rel="stylesheet" type="text/css" href="./searchbar_style.css">
+<link rel="stylesheet" type="text/css" href="/Users/rakshitdwivedi/Desktop/Team-Eats/CSS-files/searchbar_style.css">
 </head>
+<!-- Start of body tag -->
+
 
 <body>
+	<h1> Let's Eats! </h1>
 
-
+	<div id="search">
 	<input id="searchbar" onkeyup="foodSearch()" type="text"
-		name="search" placeholder="What would you like to eat today?">
+		name="search" placeholder="Hungry? Search for your favorite food!">
+		<form action="https://www.google.com" method="get">
+		<input id="searchbutton" type="submit" value="Search" onclick="window.location='https://www.google.com'">
+	</form>
+	</div>
 
 
-	<ul id='list'>
+<ul id="list-item">
 		<li class="food">Chicken Wings</li>
 		<li class="food">Mozarella Sticks</li>
 		<li class="food">French Fries</li>
@@ -32,15 +37,21 @@
 	</ul>
 
 
+<!-- <script type="text/javascript">
+				function dropFunction() {
+				document.getElementById("list-item").classList.toggle("show");
+				}
+</script> -->
+
 	<script type= "text/javascript">
 
 				function foodSearch() {
-					let input = document.getElementById('searchbar').value		//Retrieves value enetered on the search bar by user
-					input=input.toUpperCase();																//Converts to lower case to avoid ambiguity
-					let x = document.getElementsByClassName('food');					//Retrieves the list of food under class name 'food'
+					let input = document.getElementById('searchbar').value
+					input=input.toUpperCase();
+					let x = document.getElementsByClassName('food');
 
 					for (i = 0; i < x.length; i++) {
-						if (x[i].innerHTML.toUpperCase().includes(input)) {		//Check to see if the search is in the list
+						if (x[i].innerHTML.toUpperCase().includes(input)) {
 							x[i].style.display="list-item";
 						}
 						else {
@@ -49,6 +60,6 @@
 					}
 				}
 	</script>
-</body>
 
+</body>
 </html>

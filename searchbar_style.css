@@ -11,7 +11,9 @@
 		text-align: left;
     border:1px solid #eaeaea;
 		border-radius: 25px;
-		display:inline-block;
+		display:flex;
+		flex-wrap: wrap;
+		flex-direction: row-reverse;
 		outline:none;
 }
 #searchbar:hover{
@@ -22,18 +24,22 @@
 }
 
 body{
-	background:linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url("searchpage_image2.jpg");
-	background-size: cover;
-	background-color: #FFFFFF;
+	/* background:linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url("/Users/rakshitdwivedi/Desktop/Team-Eats/Pictures/searchpage_image2.jpg");
+	background-size: cover; */
+	background-color: #87cefa;
 	height: 100%;
+
+
 }
 
 #searchbutton{
 	color: #FFFFFF;
-	margin-left: 650px;
+	font-family: Avenir;
+	font-weight: lighter;
+	margin-left: 630px;
 	margin-top: 32px;
 	border-radius: 25px;
-	background-color: #4FC3F7;
+	background-color: #29B6F6;
 }
 
 input[type="submit"] {
@@ -46,7 +52,7 @@ input[type="submit"] {
     cursor: default;
     font-size: 14px;
     font-weight: bold;
-    width: 100px;
+    width: 150px;
     padding: 0 16px;
     height:36px;
 }
@@ -63,15 +69,15 @@ color: #FFFFFF;
 display: list-item;
 }
 
-.show{
+/* .show{
 	display: block;
-}
+} */
 
 h1{
 	margin-top: 30px;
 	margin-left: 30px;
 	font-size: 30px;
-	font-weight: lighter;
+	font-weight:lighter;
 	font-family: Avenir;
 	color: #FFFFFF;
 }

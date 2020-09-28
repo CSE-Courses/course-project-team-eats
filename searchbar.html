@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>
-		Welcome to Eats Search!
+		Find your favorite restaurant right here!
 	</title>
-<link rel="stylesheet" type="text/css" href="searchbar_style.css">
+<link rel="stylesheet" type="text/css" href="/Users/rakshitdwivedi/Desktop/Team-Eats/CSS-files/searchbar_style.css">
 </head>
 <!-- Start of body tag -->
 
@@ -14,8 +15,10 @@
 	<h1> Let's Eats! </h1>
 
 	<div id="search">
-	<input id="searchbar" onkeyup="foodSearch()" type="text"
+	<form method="post" action="restaurant-list.php">
+	<input id="searchbar" name="search" onkeyup="foodSearch()" type="text"
 		name="search" placeholder="Hungry? Search for your favorite food!">
+	</form>
 		<form action="https://www.google.com" method="get">
 		<input id="searchbutton" type="submit" value="Search" onclick="window.location='https://www.google.com'">
 	</form>
@@ -37,16 +40,21 @@
 	</ul>
 
 
-<!-- <script type="text/javascript">
-				function dropFunction() {
-				document.getElementById("list-item").classList.toggle("show");
-				}
-</script> -->
+	<script>
+			var input = document.getElementById("searchbar");
+			let input_value = document.getElementById("searchbar").value;
+			input.addEventListener("keyup", function(event) {
+			  if (event.keyCode === 13 ) {
+			   event.preventDefault();
+			   document.getElementById("searchbutton").click();
+			  }
+			});
+	</script>
 
-	<script type= "text/javascript">
+	<script>
 
 				function foodSearch() {
-					let input = document.getElementById('searchbar').value
+					let input = document.getElementById('searchbar').value;
 					input=input.toUpperCase();
 					let x = document.getElementsByClassName('food');
 

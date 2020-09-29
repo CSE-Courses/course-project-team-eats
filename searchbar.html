@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		Find your favorite restaurant right here!
+	</title>
+<link rel="stylesheet" type="text/css" href="searchbar_style.css">
+</head>
+<!-- Start of body tag -->
+
+
+<body>
+	<h1> Let's Eats! </h1>
+
+	<div id="search">
+	<form method="post" action="restaurant-list.php">
+	<input id="searchbar" name="search" onkeyup="foodSearch()" type="text"
+		name="search" placeholder="Hungry? Search for your favorite food!">
+	</form>
+		<form action="https://www.google.com" method="get">
+		<input id="searchbutton" type="submit" value="Search" onclick="window.location='https://www.google.com'">
+	</form>
+	</div>
+
+
+<ul id="list-item">
+		<li class="food">Chicken Wings</li>
+		<li class="food">Mozarella Sticks</li>
+		<li class="food">French Fries</li>
+		<li class="food">Burger</li>
+		<li class="food">Chicken Burrito</li>
+		<li class="food">Lo Mein</li>
+		<li class="food">Egg Roll</li>
+		<li class="food">Chicken Bowl</li>
+		<li class="food">Sushi</li>
+		<li class="food">Salmon Roll</li>
+		<li class="food">Quessadila</li>
+	</ul>
+
+
+	<script>
+			var input = document.getElementById("searchbar");
+			let input_value = document.getElementById("searchbar").value;
+			input.addEventListener("keyup", function(event) {
+			  if (event.keyCode === 13 ) {
+			   event.preventDefault();
+			   document.getElementById("searchbutton").click();
+			  }
+			});
+	</script>
+
+	<script>
+
+				function foodSearch() {
+					let input = document.getElementById('searchbar').value;
+					input=input.toUpperCase();
+					let x = document.getElementsByClassName('food');
+
+					for (i = 0; i < x.length; i++) {
+						if (x[i].innerHTML.toUpperCase().includes(input)) {
+							x[i].style.display="list-item";
+						}
+						else {
+							x[i].style.display="none";
+						}
+					}
+				}
+	</script>
+
+</body>
+</html>

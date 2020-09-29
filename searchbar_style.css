@@ -1,0 +1,83 @@
+
+#searchbar{
+		font-size: 15px;
+		font-family: sans-serif;
+		padding-left: 20px;
+    margin-top: 200px;
+		margin-left: 450px;
+		margin-right: 450px;
+		height: 50px;
+    width: 500px;
+		text-align: left;
+    border:1px solid #eaeaea;
+		border-radius: 25px;
+		display:flex;
+		flex-wrap: wrap;
+		flex-direction: row-reverse;
+		outline:none;
+}
+#searchbar:hover{
+    border-color: #a0a0a0 #b9b9b9 #b9b9b9 #b9b9b9;
+}
+#searchbar:focus{
+    border-color:#4d90fe;
+}
+
+body{
+	/* background:linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url("/Users/rakshitdwivedi/Desktop/Team-Eats/Pictures/searchpage_image2.jpg");
+	background-size: cover; */
+	background-color: lightskyblue;
+	height: 100%;
+
+
+}
+
+#searchbutton{
+	color: #FFFFFF;
+	font-family: Avenir;
+	font-weight: lighter;
+	margin-left: 630px;
+	margin-top: 32px;
+	border-radius: 25px;
+	background-color: #29B6F6;
+}
+
+input[type="submit"] {
+		font-size: 15px;
+		font-family: serif;
+    border-radius: 2px;
+    background: #f2f2f2;
+    border: 1px solid #424242;
+    color: #757575;
+    cursor: default;
+    font-size: 14px;
+    font-weight: bold;
+    width: 150px;
+    padding: 0 16px;
+    height:36px;
+}
+input[type="submit"]:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #222;
+}
+
+.food{
+color: #FFFFFF;
+display: list-item;
+}
+
+/* .show{
+	display: block;
+} */
+
+h1{
+	margin-top: 30px;
+	margin-left: 30px;
+	font-size: 30px;
+	font-weight:lighter;
+	font-family: Avenir;
+	color: #FFFFFF;
+}

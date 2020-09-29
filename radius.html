@@ -4,12 +4,20 @@
         <body style = "background-color:lightskyblue"></body>
         <style>
             .prompt h1 {
+                font-family: Avenir;
+                font-weight: lighter;
                 text-align:center;
                 position:absolute;
                 top:30%;
                 transform:translateX(70%);
             }
+            .subtitle h2{
+                font-family: Avenir;
+                font-weight: lighter;
+            }
             .subtitle h1 {
+                font-family: Avenir;
+                font-weight: lighter;
                 text-align:center;
                 position:absolute;
                 top:40%;
@@ -17,6 +25,8 @@
                 font-size:x-large;
             }
             .button1 {
+                font-family: Avenir;
+                font-weight: lighter;
                 margin:0;
                 position:absolute;
                 top:50%;
@@ -26,6 +36,8 @@
                 border-radius:12px;
             }
             .button2 {
+                font-family: Avenir;
+                font-weight: lighter;
                 margin:0;
                 position:absolute;
                 top:50%;
@@ -35,6 +47,8 @@
                 border-radius:12px;
             }
             .button3 {
+                font-family: Avenir;
+                font-weight: lighter;
                 margin:0;
                 position:absolute;
                 top:50%;
@@ -44,6 +58,8 @@
                 border-radius:12px;
             }
             .button4 {
+                font-family: Avenir;
+                font-weight: lighter;
                 margin:0;
                 position:absolute;
                 top:50%;
@@ -53,10 +69,22 @@
                 border-radius:12px;
             }
 
+            .Next{
+                font-family: Avenir;
+                font-weight: lighter;
+                position: absolute;
+                font-weight: bold;
+                background: blue;
+                right: 0;
+                bottom: 120px;
+                padding:15px 32px;
+            }
+
             .button1:hover {background-color:lightgray}
             .button2:hover {background-color:lightgray}
             .button3:hover {background-color:lightgray}
             .button4:hover {background-color:lightgray}
+            .Next:hover {background-color:lightblue}
         </style>
         <div class = "prompt">
             <h1>How far are you willing to travel for food?</h1>
@@ -95,5 +123,6 @@
             <button class="button button2" onclick="getRadius(10)">10 miles</button>
             <button class="button button3" onclick="getRadius(15)">15 miles</button>
             <button class="button button4" onclick="getRadius(20)">20 miles</button>
+            <button class="Next" onclick="location.href='attendees.html'">Next</button>
     </body>
 </html>

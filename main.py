@@ -1,4 +1,27 @@
+import bottle
+import json
 import DBfuncts
-if __name__ == '__main__':
-    DBfuncts.miles_spec(7)
-    DBfuncts.food_spec("mozzarella")
+
+
+@bottle.route("/")
+def index_file():
+    return bottle.static_file("index.html", root="")
+
+
+@bottle.route("/frontend.js")
+def static():
+    return bottle.static_file("frontend.js", root="")
+
+
+@bottle.post("/sendquery")
+def send_code():
+    print("first")
+    content = bottle.request.body.read().decode()
+    food_choice = json.loads(content)
+    return json.dumps(DBfuncts.food_spec(food_choice))
+    #print("second")
+    #return json.dumps(DBfuncts.test(food_choice))
+
+
+bottle.run(host="0.0.0.0", port=8080, debug=True)
+

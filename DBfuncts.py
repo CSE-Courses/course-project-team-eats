@@ -21,9 +21,8 @@ def food_spec(food):
                      password="50330831",
                      db="cse442_542_2020_fall_teama_db")
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM giancarlos WHERE description REGEXP %s", food)
+    cursor.execute("SELECT item, description FROM giancarlos WHERE item REGEXP %s", food)
     data = cursor.fetchall()
     print(data)
     return data
     db.close()
-

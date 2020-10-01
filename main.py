@@ -18,10 +18,10 @@ def send_code():
     print("first")
     content = bottle.request.body.read().decode()
     food_choice = json.loads(content)
+    print("second")
     return json.dumps(DBfuncts.food_spec(food_choice))
-    #print("second")
     #return json.dumps(DBfuncts.test(food_choice))
 
 
-bottle.run(host="0.0.0.0", port=8080, debug=True)
-
+bottle.run(host="0.0.0.0", port=3306, debug=True)
+#bottle.run(server='cheshire', host='0.0.0.0', port=3306,debug=True)

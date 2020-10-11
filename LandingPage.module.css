@@ -1,0 +1,19 @@
+.logo{
+    width: 500px;
+    height: 150px;
+    margin:100px 0;
+    
+}
+
+.search-area{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing{
+    
+    display: flex;
+    justify-content: center;
+}
+

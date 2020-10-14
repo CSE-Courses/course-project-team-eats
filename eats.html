@@ -1,22 +1,58 @@
-<!--
-*Author: Rick Thompson
-*Date:9/22/2020
-*File Type: HTML
-*Purpose:
-*
--->
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="button_design.css" type="text/css">
-    <title>Title</title>
+    <style>
+      body {
+        background-image: url('eats.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
 </head>
-<body>
-<div class="container">
-<div id="center">
-    <script src="Eats_button.js"></script>
-</div>
-</div>
-</body>
+    <body>
+        <style>
+            .prompt h1 {
+                font-family: Avenir;
+                font-weight:bold;
+                text-align:center;
+                top: 40%;
+                transform:translateX(183%);
+                position:absolute;
+                border-radius:5px;
+            }
+            .prompt h2 {
+                font-family: Avenir;
+                font-weight:bold;
+                text-align:left;
+                position:absolute;
+                border-radius:5px;
+            }
+            .Start{
+                font-family: Avenir;
+                font-weight: bold;
+                font-size:large;
+                top: 50%;
+                transform:translateX(425%);
+                margin:0;
+                position:absolute;
+                background-color:lightskyblue;
+                padding:15px 32px;
+                border-radius:12px;
+                outline:none;
+                cursor:pointer;
+                border-color:black;
+            }
+
+            .Start:hover {background-color:white}
+            .Start:focus {background-color:white}
+
+        </style>
+        <div class = "prompt">
+            <h1>Click to get started!</h1>
+            <h2>eats.io</h2>
+        </div>
+            <button class="Start" onclick="location.href='radius.html'">Let's Eat!</button>
+    </body>
 </html>

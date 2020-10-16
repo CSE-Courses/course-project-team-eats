@@ -1,0 +1,38 @@
+.body{
+   
+    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('../assets/starter_image.jpg') ;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+
+}
+
+.block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10% 0;
+}
+
+.paragraph{
+    font-size: 25px;
+    font-family: 'Avenir';
+    color: white;
+    
+}
+
+.start-button{
+    width: 300px;
+    margin: 10% 0;
+    
+}
+
+.logo{
+    width: 150px;
+    margin: 2% 0;
+    margin-left: 2%;
+}

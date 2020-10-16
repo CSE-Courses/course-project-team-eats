@@ -5,6 +5,7 @@ import styles from './LandingPage.module.css';
 import { SearchBar } from '../SearchBar/SearchBar';
 //import { SearchSuggestions } from './SearchSuggestions/SearchSuggestions';
 import useReactRouter from 'use-react-router';
+import {Link} from 'react-router-dom';
 
 
 export function LandingPage(){
@@ -22,7 +23,7 @@ export function LandingPage(){
             <div className={styles['search-area']}>
 
             {/* <TopNav /> */}
-            <img src={logo} className={styles.logo} alt='logo'></img>
+            <Link to='/' > <img src={logo} className={styles.logo} alt='logo'></img> </Link>
             <SearchBar search={search}/>
             {/* <SearchSuggestions /> */}
          </div>

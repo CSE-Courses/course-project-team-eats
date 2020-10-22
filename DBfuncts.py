@@ -1,6 +1,8 @@
 import pymysql
 import eats_algo
 
+def test(food):
+    return food
 
 def miles_spec(miles):
     db = pymysql.connect(host="tethys.cse.buffalo.edu",

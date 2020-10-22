@@ -32,7 +32,7 @@ function insert(){
     let food = document.getElementById("searchbar").value;
     document.getElementById("searchbar").value = "";
     let foodJson = JSON.stringify(food);
-    ajaxGetRequest("/insertquery", foodJson, display);
+    ajaxPostRequest("/insertquery", foodJson, display);
 }
 
 

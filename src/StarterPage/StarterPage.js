@@ -9,7 +9,7 @@ export function StarterPage(){
         
             <div className={styles.body}>
 
-            <Link to='/'>  <img src={logo} className={styles.logo} alt="logo"></img> </Link>  
+                <Link to='/'>  <img src={logo} className={styles.logo} alt="logo"></img> </Link>  
                 <div className={styles.block}>
                   <p className={styles.paragraph}>Click to get started!</p> 
                 <Link to='/people' > <button className={`button is-info is-rounded ${styles['start-button']}`}>

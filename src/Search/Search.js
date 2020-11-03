@@ -43,6 +43,12 @@ export function Search() {
     performSearch({ term, location, price });
   }
 
+  function getPagesCount(total, denominator) {
+    const divisible = total % denominator === 0;
+    const valueToBeAdded = divisible ? 0 : 1;
+    return Math.floor(total / denominator) + valueToBeAdded;
+  }
+
   return (
     <div>
       <NavBar term={term} location={locationParam} search={search} />
@@ -53,9 +59,10 @@ export function Search() {
         amountResults={amountResults}
         shownResults={businesses ? businesses.length : 0}
         searchWithFilter={searchWithFilter}
+        search={search}
       />
       <SearchResults businesses={businesses} />
-      <Pagination />
+      <Pagination getPagesCount={getPagesCount} />
     </div>
   );
 }

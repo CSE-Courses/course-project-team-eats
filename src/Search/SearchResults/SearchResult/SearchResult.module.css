@@ -1,25 +1,30 @@
-.search-result{
-    display: flex;
-    max-width: 1100px;
-    width: 100%;
+.search-result {
+  display: flex;
+  max-width: 1100px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.business-image{
-    width: 210px;
-    height: 210px;
-    border-radius: 4px;
-    margin-right: 1rem;
+.search-result:hover {
+  outline: 2px solid black;
+  cursor: pointer;
 }
 
-.business-info{
-    min-width: 400px;
+.business-image {
+  width: 210px;
+  height: 210px;
+  border-radius: 4px;
+  margin-right: 1rem;
 }
 
-.contact-info p{
-    font-size: 0.85rem;
-
+.business-info {
+  min-width: 400px;
 }
 
-:global(.tag).business-tag{
-    margin-right: 4px;
+.contact-info p {
+  font-size: 0.85rem;
+}
+
+:global(.tag).business-tag {
+  margin-right: 4px;
 }

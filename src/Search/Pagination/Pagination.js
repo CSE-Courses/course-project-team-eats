@@ -24,6 +24,10 @@ export function Pagination(props) {
   return (
     <div className={styles["pagination"]}>
       <nav className="pagination" role="navigation" aria-label="pagination">
+        <div className="pagination-previous">Previous</div>
+        <div className={`pagination-next ${styles["pagination-next"]}`}>
+          Next page
+        </div>
         <ul className="pagination-list">
           <li>
             <div

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 //import { connect } from "react-redux";
 import styles from "./SearchResultsSummary.module.css";
 
@@ -12,6 +12,44 @@ export function SearchResultsSummary(props) {
   //   console.log(price);
   //   e.preventDefault();
   // }
+
+  const [button1, setButton1] = useState(false);
+  const [button2, setButton2] = useState(false);
+  const [button3, setButton3] = useState(false);
+  const [button4, setButton4] = useState(false);
+
+  function handleButtonState(btn) {
+    if (btn === "1") {
+      setButton1(true);
+      setButton2(false);
+      setButton3(false);
+      setButton4(false);
+    } else if (btn === "2") {
+      setButton2(true);
+      setButton1(false);
+      setButton3(false);
+      setButton4(false);
+    } else if (btn === "3") {
+      setButton3(true);
+      setButton2(false);
+      setButton1(false);
+      setButton4(false);
+    } else if (btn === "4") {
+      setButton4(true);
+      setButton1(false);
+      setButton2(false);
+      setButton3(false);
+    } else {
+      return;
+    }
+  }
+
+  function switchOff(e) {
+    setButton1(false);
+    setButton2(false);
+    setButton3(false);
+    setButton4(false);
+  }
 
   function handlePrice(priceParam) {
     props.searchWithFilter(props.term, props.location, priceParam);
@@ -32,6 +70,11 @@ export function SearchResultsSummary(props) {
     );
   }
 
+  var btn_class1 = button1 ? "is-success" : "";
+  var btn_class2 = button2 ? "is-success" : "";
+  var btn_class3 = button3 ? "is-success" : "";
+  var btn_class4 = button4 ? "is-success" : "";
+
   return (
     <div className={styles.container}>
       <div className={styles["search-summary"]}>
@@ -51,36 +94,40 @@ export function SearchResultsSummary(props) {
 
         <div className="buttons has-addons">
           <button
-            className="button"
+            className={`button ${btn_class1} `}
             onClick={(e) => {
               handlePrice("1");
+              handleButtonState("1");
             }}
             value="1"
           >
             $
           </button>
           <button
-            className="button"
+            className={`button ${btn_class2} `}
             onClick={(e) => {
               handlePrice("2");
+              handleButtonState("2");
             }}
             value="2"
           >
             $$
           </button>
           <button
-            className="button"
+            className={`button ${btn_class3} `}
             onClick={(e) => {
               handlePrice("3");
+              handleButtonState("3");
             }}
             value="3"
           >
             $$$
           </button>
           <button
-            className="button"
+            className={`button ${btn_class4} `}
             onClick={(e) => {
               handlePrice("4");
+              handleButtonState("4");
             }}
             value="4"
           >
@@ -95,7 +142,13 @@ export function SearchResultsSummary(props) {
           <span>Apply filter</span>
         </button> */}
 
-        <button className="button" onClick={clearFilter}>
+        <button
+          className="button"
+          onClick={(e) => {
+            clearFilter(e);
+            switchOff(e);
+          }}
+        >
           <span className="icon">
             <i className="fas fa-minus-circle"></i>
           </span>

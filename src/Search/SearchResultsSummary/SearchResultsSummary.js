@@ -58,6 +58,7 @@ export function SearchResultsSummary(props) {
       props.location,
       slider.value * 1600
     );
+    console.log(slider.value);
   }
 
   function handlePrice(priceParam) {

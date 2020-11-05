@@ -35,3 +35,12 @@
 .filters > * {
   margin-right: 0.7rem;
 }
+
+.text-heading {
+  margin-left: 2px;
+}
+
+.slider {
+  margin: 2px 0;
+  margin-left: 3px;
+}

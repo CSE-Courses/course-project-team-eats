@@ -4,7 +4,11 @@ import * as api from "./api";
 export function useBusinessSearch(term, location, price) {
   const [businesses, setBusinesses] = useState([]);
   const [amountResults, setAmountResults] = useState();
-  const [searchParams, setSearchParams] = useState({ term, location, price });
+  const [searchParams, setSearchParams] = useState({
+    term,
+    location,
+    price,
+  });
   // const [searchWithFilterParams, setsearchWithFilterParams] = useState({
   //   price,
   // });

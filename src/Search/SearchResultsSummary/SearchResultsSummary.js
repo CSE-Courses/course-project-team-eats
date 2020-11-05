@@ -6,6 +6,8 @@ export function SearchResultsSummary(props) {
   const [button2, setButton2] = useState(false);
   const [button3, setButton3] = useState(false);
   const [button4, setButton4] = useState(false);
+  const [dropDown, setDropDown] = useState(false);
+  const [slider, setSlider] = useState({ value: 0 });
 
   function handleButtonState(btn) {
     if (btn === "1") {
@@ -38,6 +40,25 @@ export function SearchResultsSummary(props) {
     setButton2(false);
     setButton3(false);
     setButton4(false);
+    setSlider({ value: 0 });
+  }
+
+  function handleDropdown(e) {
+    if (!dropDown) {
+      setDropDown(true);
+    } else {
+      setDropDown(false);
+    }
+  }
+
+  function handleSlider(e) {
+    setSlider({ value: e.target.value });
+    props.searchWithRadiusFilter(
+      props.term,
+      props.location,
+      slider.value * 1600
+    );
+    console.log(slider.value * 1600);
   }
 
   function handlePrice(priceParam) {
@@ -64,6 +85,8 @@ export function SearchResultsSummary(props) {
   var btn_class3 = button3 ? "is-success" : "";
   var btn_class4 = button4 ? "is-success" : "";
 
+  var dropDown_class = dropDown ? "is-active" : "";
+
   return (
     <div className={styles.container}>
       <div className={styles["search-summary"]}>
@@ -74,12 +97,50 @@ export function SearchResultsSummary(props) {
       </div>
 
       <div className={styles.filters}>
-        <button className="button">
+        {/* <button className="button">
           <span className="icon">
             <i className="fas fa-sliders-h"></i>
           </span>
           <span>All filters</span>
-        </button>
+        </button> */}
+        <div className={`dropdown ${dropDown_class}`}>
+          <div className="dropdown-trigger">
+            <button
+              className="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu3"
+              onClick={(e) => {
+                handleDropdown(e);
+              }}
+            >
+              <span className="icon">
+                <i className="fas fa-sliders-h"></i>
+              </span>
+              <span>All filters</span>
+            </button>
+          </div>
+          <div className="dropdown-menu" id="dropdown-menu3" role="menu">
+            <div className="dropdown-content">
+              <div className="slider-content">
+                <div className={`text-heading ${styles["text-heading"]}`}>
+                  Filter by miles
+                </div>
+                <input
+                  className={`slider is-fullwidth is-success is-circle ${styles["slider"]}`}
+                  step="1"
+                  min="0"
+                  max="25"
+                  value={slider.value}
+                  type="range"
+                  onChange={(e) => {
+                    handleSlider(e);
+                  }}
+                ></input>
+                <output for="sliderWithValue">{slider.value}</output>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className="buttons has-addons">
           <button

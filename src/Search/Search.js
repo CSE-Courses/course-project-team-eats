@@ -13,12 +13,13 @@ export function Search() {
   const term = params.get("find_desc");
   const locationParam = params.get("find_loc");
   const priceParam = params.get("price");
+  const radiusParam = params.get("radius");
   const [
     businesses,
     amountResults,
     searchParams,
     performSearch,
-  ] = useBusinessSearch(term, locationParam, priceParam);
+  ] = useBusinessSearch(term, locationParam, priceParam, radiusParam);
 
   if (!term || !locationParam) {
     history.push("/");
@@ -37,10 +38,22 @@ export function Search() {
     const encodedTerm = encodeURI(term);
     const encodedLocation = encodeURI(locationParam);
     const encodedPrice = price;
+
     history.push(
       `/search?find_desc=${encodedTerm}&find_loc=${encodedLocation}&price=${encodedPrice}`
     );
     performSearch({ term, location, price });
+  }
+
+  function searchWithRadiusFilter(term, location, radius) {
+    const encodedTerm = encodeURI(term);
+    const encodedLocation = encodeURI(locationParam);
+    const encodedRadius = radius;
+
+    history.push(
+      `/search?find_desc=${encodedTerm}&find_loc=${encodedLocation}&radius=${encodedRadius}`
+    );
+    performSearch({ term, location, radius });
   }
 
   function getPagesCount(total, denominator) {
@@ -59,6 +72,7 @@ export function Search() {
         amountResults={amountResults}
         shownResults={businesses ? businesses.length : 0}
         searchWithFilter={searchWithFilter}
+        searchWithRadiusFilter={searchWithRadiusFilter}
         search={search}
       />
       <SearchResults businesses={businesses} />

@@ -1,18 +1,7 @@
 import React, { useState } from "react";
-//import { connect } from "react-redux";
 import styles from "./SearchResultsSummary.module.css";
 
 export function SearchResultsSummary(props) {
-  // const [price, setPrice] = useState("");
-
-  // function submitFilter(e) {
-  //   if (typeof props.searchWithFilter === "function") {
-  //     props.searchWithFilter(props.term, props.location, price);
-  //   }
-  //   console.log(price);
-  //   e.preventDefault();
-  // }
-
   const [button1, setButton1] = useState(false);
   const [button2, setButton2] = useState(false);
   const [button3, setButton3] = useState(false);

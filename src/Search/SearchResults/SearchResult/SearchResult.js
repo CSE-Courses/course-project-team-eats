@@ -1,32 +1,92 @@
-import React from "react";
+import React, { useState } from "react";
 import { BusinessRating } from "../../../BusinessRating/BusinessRating";
 import styles from "./SearchResult.module.css";
-import $ from "jquery";
+//import $ from "jquery";
+
+const initialList = [
+  {
+    id: "1",
+    name: "Nothing",
+  },
+];
+
+//This is the part where a global function is declared.
+
+// function GlobalList (props) {
+//     const [listData, setListData] = useState({ list: initialList });
+//     const [name, setName] = useState("");
+
+//     function handleAdd() {
+//       const newList = listData.list.concat({
+//         id: props.business.id,
+//         name: props.business.name,
+//       });
+//       setListData({ ...listData, list: newList });
+//       setName("");
+//     }
+
+//     function handleDelete() {
+//       setListData({ list: initialList });
+//       setName("");
+//     }
+
+//     console.log(name);
+//     console.log(listData);
+// }
 
 export function SearchResult(props) {
+  // const [restaurant, setRestaurant] = useState([]);
+  const [listData, setListData] = useState({ list: initialList });
+  const [name, setName] = useState("");
   if (!props.business) {
     return <div> Error! Not Found</div>;
   }
 
-  function handleClick(e) {
-    $(".image-checkbox").each(function () {
-      if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
-        $(this).addClass("image-checkbox-checked");
-      } else {
-        $(this).removeClass("image-checkbox-checked");
-      }
-    });
+  // function handleClick(e) {
+  //   $(".image-checkbox").each(function () {
+  //     if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+  //       $(this).addClass("image-checkbox-checked");
+  //     } else {
+  //       $(this).removeClass("image-checkbox-checked");
+  //     }
+  //   });
 
-    // sync the state to the input
-    $(".image-checkbox").on("click", function (e) {
-      $(this).toggleClass("image-checkbox-checked");
-      var $checkbox = $(this).find('input[type="checkbox"]');
-      $checkbox.prop("checked", !$checkbox.prop("checked"));
+  //   // sync the state to the input
+  //   $(".image-checkbox").on("click", function (e) {
+  //     $(this).toggleClass("image-checkbox-checked");
+  //     var $checkbox = $(this).find('input[type="checkbox"]');
+  //     $checkbox.prop("checked", !$checkbox.prop("checked"));
 
-      e.preventDefault();
+  //     e.preventDefault();
+  //   });
+  //   console.log("Clicked");
+  //}
+
+  function handleAdd() {
+    const newList = listData.list.concat({
+      id: props.business.id,
+      name: props.business.name,
     });
-    console.log("Clicked");
+    setListData({ ...listData, list: newList });
+    setName("");
   }
+
+  function handleDelete() {
+    setListData({ list: initialList });
+    setName("");
+  }
+
+  console.log(name);
+  console.log(listData);
+
+  // function addItem(business) {
+  //   let arr = restaurant;
+  //   console.log([arr]);
+  //   const item = business;
+  //   arr = [...arr, item];
+  //   console.log([arr]);
+  //   setRestaurant(arr);
+  // }
 
   const tags = props.business.categories.map((category) => (
     <span
@@ -45,8 +105,13 @@ export function SearchResult(props) {
       <label
         className={`image-checkbox`}
         onClick={(e) => {
-          handleClick();
+          if (e.target.checked) {
+            handleAdd();
+          } else {
+            handleDelete();
+          }
         }}
+        value={props.business.name}
       >
         <img
           src={props.business.image_url}

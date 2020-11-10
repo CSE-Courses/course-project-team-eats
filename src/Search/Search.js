@@ -1,6 +1,6 @@
 import React from "react";
 import { NavBar } from "../NavBar/NavBar";
-//import {SubNav} from '../NavBar/SubNav/SubNav';
+import styles from "./Search.module.css";
 import { SearchResultsSummary } from "./SearchResultsSummary/SearchResultsSummary";
 import { SearchResults } from "./SearchResults/SearchResults";
 import useReactRouter from "use-react-router";
@@ -14,12 +14,19 @@ export function Search() {
   const locationParam = params.get("find_loc");
   const priceParam = params.get("price");
   const radiusParam = params.get("radius");
+  const offsetParam = params.get("offset");
   const [
     businesses,
     amountResults,
     searchParams,
     performSearch,
-  ] = useBusinessSearch(term, locationParam, priceParam, radiusParam);
+  ] = useBusinessSearch(
+    term,
+    locationParam,
+    priceParam,
+    radiusParam,
+    offsetParam
+  );
 
   if (!term || !locationParam) {
     history.push("/");
@@ -56,10 +63,20 @@ export function Search() {
     performSearch({ term, location, radius });
   }
 
-  function getPagesCount(total, denominator) {
-    const divisible = total % denominator === 0;
-    const valueToBeAdded = divisible ? 0 : 1;
-    return Math.floor(total / denominator) + valueToBeAdded;
+  function nextPage(term, location, offset) {
+    const encodedTerm = encodeURI(term);
+    const encodedLocation = encodeURI(locationParam);
+    const encodedOffset = offset;
+
+    history.push(
+      `/search?find_desc=${encodedTerm}&find_loc=${encodedLocation}&offset=${encodedOffset}`
+    );
+    performSearch({ term, location, offset });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    //TODO: function to submit data to the DB
   }
 
   return (
@@ -74,9 +91,27 @@ export function Search() {
         searchWithFilter={searchWithFilter}
         searchWithRadiusFilter={searchWithRadiusFilter}
         search={search}
+        handleSubmit={handleSubmit}
       />
-      <SearchResults businesses={businesses} />
-      <Pagination getPagesCount={getPagesCount} />
+      <div className={`${styles["flexbox"]}`}>
+        <div className={styles["heading"]}>Choose your 5 best restaurants</div>
+        <button
+          className={`button is-info ${styles["submit-button"]}`}
+          onClick={(e) => handleSubmit(e)}
+        >
+          <span>Next User</span>
+          <span className="icon">
+            <i className="fas fa-chevron-right"></i>
+          </span>
+        </button>
+      </div>
+      <SearchResults businesses={businesses} handleSubmit={handleSubmit} />
+      <Pagination
+        nextPage={nextPage}
+        search={search}
+        term={searchParams.term}
+        location={searchParams.location}
+      />
     </div>
   );
 }

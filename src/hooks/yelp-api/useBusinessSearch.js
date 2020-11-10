@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import * as api from "./api";
 
-export function useBusinessSearch(term, location, price) {
+export function useBusinessSearch(term, location) {
   const [businesses, setBusinesses] = useState([]);
   const [amountResults, setAmountResults] = useState();
   const [searchParams, setSearchParams] = useState({
     term,
     location,
-    price,
   });
   // const [searchWithFilterParams, setsearchWithFilterParams] = useState({
   //   price,

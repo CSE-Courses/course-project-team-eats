@@ -15,21 +15,25 @@ export function SearchResultsSummary(props) {
       setButton2(false);
       setButton3(false);
       setButton4(false);
+      setSlider({ value: 0 });
     } else if (btn === "2") {
       setButton2(true);
       setButton1(false);
       setButton3(false);
       setButton4(false);
+      setSlider({ value: 0 });
     } else if (btn === "3") {
       setButton3(true);
       setButton2(false);
       setButton1(false);
       setButton4(false);
+      setSlider({ value: 0 });
     } else if (btn === "4") {
       setButton4(true);
       setButton1(false);
       setButton2(false);
       setButton3(false);
+      setSlider({ value: 0 });
     } else {
       return;
     }
@@ -53,6 +57,10 @@ export function SearchResultsSummary(props) {
 
   function handleSlider(e) {
     setSlider({ value: e.target.value });
+    setButton1(false);
+    setButton2(false);
+    setButton3(false);
+    setButton4(false);
     props.searchWithRadiusFilter(
       props.term,
       props.location,
@@ -116,7 +124,7 @@ export function SearchResultsSummary(props) {
               <span className="icon">
                 <i className="fas fa-sliders-h"></i>
               </span>
-              <span>All filters</span>
+              <span>Filters</span>
             </button>
           </div>
           <div className="dropdown-menu" id="dropdown-menu3" role="menu">
@@ -185,13 +193,6 @@ export function SearchResultsSummary(props) {
           </button>
         </div>
 
-        {/* <button className="button" onClick={submitFilter}>
-          <span className="icon">
-            <i className="fas fa-check"></i>
-          </span>
-          <span>Apply filter</span>
-        </button> */}
-
         <button
           className="button"
           onClick={(e) => {
@@ -204,6 +205,16 @@ export function SearchResultsSummary(props) {
           </span>
           <span>Clear filter</span>
         </button>
+
+        {/* <button
+          className="button is-info"
+          onClick={(e) => props.handleSubmit(e)}
+        >
+          <span>Next User</span>
+          <span className="icon">
+            <i className="fas fa-chevron-right"></i>
+          </span>
+        </button> */}
       </div>
     </div>
   );

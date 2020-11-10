@@ -1,6 +1,6 @@
 import React from "react";
 import { NavBar } from "../NavBar/NavBar";
-import styles from "./Search.module.css";
+//import styles from "./Search.module.css";
 import { SearchResultsSummary } from "./SearchResultsSummary/SearchResultsSummary";
 import { SearchResults } from "./SearchResults/SearchResults";
 import useReactRouter from "use-react-router";
@@ -74,6 +74,16 @@ export function Search() {
     performSearch({ term, location, offset });
   }
 
+  // function nextUser(term, location) {
+  //   const encodedTerm = encodeURI(term);
+  //   const encodedLocation = encodeURI(locationParam);
+
+  //   history.push(
+  //     `/search?find_desc=${encodedTerm}&find_loc=${encodedLocation}`
+  //   );
+  //   performSearch({ term, location });
+  // }
+
   function handleSubmit(e) {
     e.preventDefault();
     //TODO: function to submit data to the DB
@@ -93,18 +103,23 @@ export function Search() {
         search={search}
         handleSubmit={handleSubmit}
       />
-      <div className={`${styles["flexbox"]}`}>
+
+      {/* <div className={`${styles["flexbox"]}`}>
         <div className={styles["heading"]}>Choose your 5 best restaurants</div>
+
         <button
           className={`button is-info ${styles["submit-button"]}`}
-          onClick={(e) => handleSubmit(e)}
+          onClick={(e) => {
+            handleSubmit(e);
+            search();
+          }}
         >
           <span>Next User</span>
           <span className="icon">
             <i className="fas fa-chevron-right"></i>
           </span>
         </button>
-      </div>
+      </div> */}
       <SearchResults businesses={businesses} handleSubmit={handleSubmit} />
       <Pagination
         nextPage={nextPage}

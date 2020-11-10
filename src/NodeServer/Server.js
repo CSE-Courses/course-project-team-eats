@@ -12,6 +12,7 @@ var connection = createConnection({
 
 connection.connect();
 
+//Fix me
 app.get("/", function (request, response) {
   response.send(request);
   connection.query("SELECT 1 + 1 AS solution", function (err, rows, fields) {

@@ -2,25 +2,6 @@ import React, { useState } from "react";
 import styles from "./Pagination.module.css";
 
 export function Pagination(props) {
-  // this.state = {
-  //   query: "",
-  //   results: {},
-  //   error: "",
-  //   message: "",
-  //   loading: false,
-  //   totalResults: 0,
-  //   totalPages: 0,
-  //   currentPageNo: 0,
-  // };
-
-  // const [query, setQuery] = useState("");
-  // const [results, setResults] = useState([]);
-  // const [error, setError] = useState("");
-  // const [message, setMessage] = useState("");
-  // const [loading, setLoading] = useState(false);
-  // const [totalResults, setTotalResults] = useState(0);
-  // const [currentPage, setCurrentPage] = useState(0);
-
   const [offset, setOffset] = useState(0);
   const [button1, setButton1] = useState(true);
   const [button2, setButton2] = useState(false);

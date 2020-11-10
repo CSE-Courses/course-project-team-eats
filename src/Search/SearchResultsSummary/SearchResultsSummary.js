@@ -100,7 +100,9 @@ export function SearchResultsSummary(props) {
       <div className={styles["search-summary"]}>
         <h1 className="subtitle">
           <strong>{props.term}</strong> {props.location}
+          {/* <p className="paragraph">User 1: Choose your top 5 restaurants</p> */}
         </h1>
+        <h1 className={styles["heading"]}>Choose your top 5 restaurants</h1>
         {resultStats}
       </div>
 
@@ -206,15 +208,17 @@ export function SearchResultsSummary(props) {
           <span>Clear filter</span>
         </button>
 
-        {/* <button
-          className="button is-info"
-          onClick={(e) => props.handleSubmit(e)}
+        <button
+          className={`button is-info ${styles["submit-button"]}`}
+          onClick={(e) => {
+            props.search(props.term, props.location);
+          }}
         >
           <span>Next User</span>
           <span className="icon">
             <i className="fas fa-chevron-right"></i>
           </span>
-        </button> */}
+        </button>
       </div>
     </div>
   );

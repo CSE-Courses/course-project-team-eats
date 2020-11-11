@@ -8,6 +8,7 @@ export function SearchResultsSummary(props) {
   const [button4, setButton4] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const [slider, setSlider] = useState({ value: 0 });
+  const [counter, setCounter] = useState(0);
 
   function handleButtonState(btn) {
     if (btn === "1") {
@@ -93,7 +94,10 @@ export function SearchResultsSummary(props) {
   var btn_class3 = button3 ? "is-success" : "";
   var btn_class4 = button4 ? "is-success" : "";
 
+  var i = 0;
+
   var dropDown_class = dropDown ? "is-active" : "";
+  //var submit_class = counter === 0 ? "" : "is-disabled";
 
   return (
     <div className={styles.container}>
@@ -209,15 +213,28 @@ export function SearchResultsSummary(props) {
         </button>
 
         <button
-          className={`button is-info ${styles["submit-button"]}`}
+          className={`button is-info  ${styles["nextUser-button"]}`}
           onClick={(e) => {
             props.search(props.term, props.location);
+            setCounter(i++);
           }}
         >
           <span>Next User</span>
           <span className="icon">
             <i className="fas fa-chevron-right"></i>
           </span>
+        </button>
+        <button
+          className={`button is-warning ${styles["submit-button"]}`}
+          title="Disabled button"
+          onClick={(e) => {
+            if (counter === 0) {
+              alert("All users must select their choices!");
+            } else {
+            }
+          }}
+        >
+          Submit
         </button>
       </div>
     </div>

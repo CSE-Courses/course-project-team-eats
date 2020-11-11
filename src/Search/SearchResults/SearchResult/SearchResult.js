@@ -79,14 +79,20 @@ export function SearchResult(props) {
   console.log(name);
   console.log(listData);
 
-  // function addItem(business) {
-  //   let arr = restaurant;
-  //   console.log([arr]);
-  //   const item = business;
-  //   arr = [...arr, item];
-  //   console.log([arr]);
-  //   setRestaurant(arr);
-  // }
+  const postData = async () => {
+    const restaurant = { listData: name };
+    const response = await fetch("/add_restaurant", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(restaurant),
+    });
+
+    if (response.ok) {
+      console.log("POST request works");
+    }
+  };
 
   const tags = props.business.categories.map((category) => (
     <span
@@ -107,6 +113,7 @@ export function SearchResult(props) {
         onClick={(e) => {
           if (e.target.checked) {
             handleAdd();
+            postData();
           } else {
             handleDelete();
           }

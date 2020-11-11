@@ -8,7 +8,7 @@ export function SearchResultsSummary(props) {
   const [button4, setButton4] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const [slider, setSlider] = useState({ value: 0 });
-  const [counter, setCounter] = useState(0);
+  //const [counter, setCounter] = useState(0);
 
   function handleButtonState(btn) {
     if (btn === "1") {
@@ -212,7 +212,7 @@ export function SearchResultsSummary(props) {
           <span>Clear filter</span>
         </button>
 
-        <button
+        {/* <button
           className={`button is-info  ${styles["nextUser-button"]}`}
           onClick={(e) => {
             props.search(props.term, props.location);
@@ -223,15 +223,12 @@ export function SearchResultsSummary(props) {
           <span className="icon">
             <i className="fas fa-chevron-right"></i>
           </span>
-        </button>
+        </button> */}
         <button
           className={`button is-warning ${styles["submit-button"]}`}
           title="Disabled button"
           onClick={(e) => {
-            if (counter === 0) {
-              alert("All users must select their choices!");
-            } else {
-            }
+            console.log("Submit button works");
           }}
         >
           Submit

@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "@types/query-string": "^6.3.0",
     "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
     "bulma": "^0.9.1",
     "bulma-slider": "^2.0.4",
     "jquery": "^3.5.1",

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link } from 'react-router-dom';
 import styles from "./SearchResultsSummary.module.css";
 
 export function SearchResultsSummary(props) {
@@ -224,7 +225,7 @@ export function SearchResultsSummary(props) {
             <i className="fas fa-chevron-right"></i>
           </span>
         </button> */}
-        <button
+        <Link to = '/Finale'> <button
           className={`button is-warning ${styles["submit-button"]}`}
           title="Disabled button"
           onClick={(e) => {
@@ -232,7 +233,7 @@ export function SearchResultsSummary(props) {
           }}
         >
           Submit
-        </button>
+        </button></Link>
       </div>
     </div>
   );

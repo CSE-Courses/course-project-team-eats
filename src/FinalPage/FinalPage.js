@@ -6,13 +6,14 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <div className={styles['body']}>
+                <div className={styles['block']}>
                     <img src={logo} className={styles.logo} alt="logo"/>
                     <p className={styles.paragraph}>Here's our restaurant recommendation:</p>
                     <p className={styles.winner}>Duff's Famous Wings</p>
+                    <div className={styles['parent-block']}>
                     <a
                         className={styles.restart}
-                        href="https://eats.vercel.app/"
+                        href="https://eats442-2bcd2.web.app"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -26,6 +27,7 @@ function App() {
                     >
                         Open Menu
                     </a>
+                        </div>
                 </div>
             </header>
         </div>

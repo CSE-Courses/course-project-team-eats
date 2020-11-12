@@ -6,7 +6,7 @@ from flask import Flask, redirect, url_for, render_template, request
 
 from flask import Flask, jsonify, request
 app = Flask(__name__)
-
+#app.config['Clear_DB'] = "mysql://bc4af97fe5f893:e7b5398d@us-cdbr-east-02.cleardb.com/heroku_e1cbc82b93d254b?reconnect=true"
 
 
 import os

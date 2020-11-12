@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="287c7330-9c4c-43f1-9aac-ac7b083df5d1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ancient-hollows-62522" beforeDir="false" afterPath="$PROJECT_DIR$/ancient-hollows-62522" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605136863669</updated>
-      <workItem from="1605136864902" duration="5547000" />
+      <workItem from="1605136864902" duration="6710000" />
     </task>
     <servers />
   </component>
@@ -123,6 +124,10 @@
       <screen x="0" y="23" width="1792" height="1037" />
     </state>
     <state width="1023" height="278" key="GridCell.Tab.0.right/0.23.1792.1037@0.23.1792.1037" timestamp="1605137438812" />
+    <state x="694" y="481" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605145575252">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="694" y="481" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1792.1120@0.0.1792.1120" timestamp="1605145575252" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/course_project_team_eats$app.coverage" NAME="app Coverage Results" MODIFIED="1605137424837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

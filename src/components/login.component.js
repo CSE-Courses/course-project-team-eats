@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
+
 
 export default class Login extends Component {
     render() {
@@ -23,7 +25,7 @@ export default class Login extends Component {
                     </div>
                 </div>
 
-                <button type="submit" className="button">Submit</button>
+               <Link to='/people'> <button type="submit" className="button">Submit</button></Link>
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p>

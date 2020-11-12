@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 
 export default class SignUp extends Component {
     render() {
@@ -26,7 +27,7 @@ export default class SignUp extends Component {
                     <input type="password" className="form-control" placeholder="Enter password" />
                 </div>
 
-                <button type="submit" className= "button">Sign Up</button>
+                <Link to='/people'> <button type="submit" className= "button">Sign Up</button></Link>
                 <p className="forgot-password text-right">
                     Already registered <a href="#">sign in?</a>
                 </p>

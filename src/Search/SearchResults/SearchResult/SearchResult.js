@@ -91,6 +91,7 @@ export function SearchResult(props) {
 
     if (response.ok) {
       console.log("POST request works");
+      console.log(response);
     }
   };
 
@@ -126,11 +127,13 @@ export function SearchResult(props) {
           className={`${styles["business-image"]}`}
         />
         <input type="checkbox" name="image[]" value="" />
-        <i className={`fa fa-check`}></i>
+        {/* <i className={`fa fa-check`}></i> */}
       </label>
 
       <div className={styles["business-info"]}>
-        <h2 className="subtitle">{props.business.name}</h2>
+        <h2 className="subtitle">
+          <strong>{props.business.name}</strong>
+        </h2>
         <BusinessRating
           reviewCount={props.business.review_count}
           rating={props.business.rating}

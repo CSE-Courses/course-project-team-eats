@@ -1,10 +1,11 @@
-.suggestions{
-    display: flex;
-    margin-top: 1rem;
+.suggestions {
+  display: flex;
+  margin-top: 1.5rem;
+  cursor: pointer;
 }
 
-.suggestion{
-    font-size: 0.75rem;
-    margin-left: 4px;
-    margin-right: 2.5rem;
+.suggestion {
+  font-size: 0.75rem;
+  margin-left: 4px;
+  margin-right: 2.5rem;
 }

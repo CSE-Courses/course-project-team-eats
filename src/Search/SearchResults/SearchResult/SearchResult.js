@@ -5,34 +5,10 @@ import styles from "./SearchResult.module.css";
 
 const initialList = [
   {
-    id: "1",
-    name: "Nothing",
+    id: "",
+    name: "",
   },
 ];
-
-//This is the part where a global function is declared.
-
-// function GlobalList (props) {
-//     const [listData, setListData] = useState({ list: initialList });
-//     const [name, setName] = useState("");
-
-//     function handleAdd() {
-//       const newList = listData.list.concat({
-//         id: props.business.id,
-//         name: props.business.name,
-//       });
-//       setListData({ ...listData, list: newList });
-//       setName("");
-//     }
-
-//     function handleDelete() {
-//       setListData({ list: initialList });
-//       setName("");
-//     }
-
-//     console.log(name);
-//     console.log(listData);
-// }
 
 export function SearchResult(props) {
   // const [restaurant, setRestaurant] = useState([]);
@@ -42,36 +18,17 @@ export function SearchResult(props) {
     return <div> Error! Not Found</div>;
   }
 
-  // function handleClick(e) {
-  //   $(".image-checkbox").each(function () {
-  //     if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
-  //       $(this).addClass("image-checkbox-checked");
-  //     } else {
-  //       $(this).removeClass("image-checkbox-checked");
-  //     }
-  //   });
-
-  //   // sync the state to the input
-  //   $(".image-checkbox").on("click", function (e) {
-  //     $(this).toggleClass("image-checkbox-checked");
-  //     var $checkbox = $(this).find('input[type="checkbox"]');
-  //     $checkbox.prop("checked", !$checkbox.prop("checked"));
-
-  //     e.preventDefault();
-  //   });
-  //   console.log("Clicked");
-  //}
-
   function handleAdd() {
     const newList = listData.list.concat({
       id: props.business.id,
       name: props.business.name,
     });
     setListData({ ...listData, list: newList });
+
     setName("");
   }
 
-  function handleDelete() {
+  function handleDelete(restaurantDeleted) {
     setListData({ list: initialList });
     setName("");
   }
@@ -79,20 +36,33 @@ export function SearchResult(props) {
   console.log(name);
   console.log(listData);
 
-  const postData = async () => {
-    const restaurant = { listData: name };
-    const response = await fetch("/add_restaurant", {
+  const deleteData = async (restaurantDeleted) => {
+    const restaurant = restaurantDeleted;
+    console.log(restaurant);
+    fetch("http://localhost:5000/restaurants/delete", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "text/html",
+      },
+      body: restaurant,
+    })
+      .then((response) => response.json())
+      .catch((err) => console.log("Error" + err));
+  };
+
+  const postData = async (businessName) => {
+    var restaurant = businessName;
+    console.log(JSON.stringify(restaurant));
+    await fetch("http://localhost:5000/restaurants/add_restaurant", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "text/html",
       },
-      body: JSON.stringify(restaurant),
-    });
-
-    if (response.ok) {
-      console.log("POST request works");
-      console.log(response);
-    }
+      body: restaurant,
+    })
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.error("Error" + err));
   };
 
   const tags = props.business.categories.map((category) => (
@@ -114,9 +84,10 @@ export function SearchResult(props) {
         onClick={(e) => {
           if (e.target.checked) {
             handleAdd();
-            postData();
+            postData(props.business.name);
           } else {
-            handleDelete();
+            handleDelete(e.target.value);
+            deleteData(props.business.name);
           }
         }}
         value={props.business.name}

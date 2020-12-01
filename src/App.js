@@ -11,6 +11,34 @@ function App() {
     <Switch>
       <Route path="/search" component={Search} />
       <Route exact path="/" component={StarterPage} />
+      <Route
+        path="/welcome"
+        component={() => {
+          window.location.href = "http://localhost:5000/welcome";
+          return null;
+        }}
+      />
+      <Route
+        path="/dashboard"
+        component={() => {
+          window.location.href = "http://localhost:5000/dashboard";
+          return null;
+        }}
+      />
+      <Route
+        path="/register"
+        component={() => {
+          window.location.href = "http://localhost:5000/users/register";
+          return null;
+        }}
+      />
+      <Route
+        path="/login"
+        component={() => {
+          window.location.href = "http://localhost:5000/users/login";
+          return null;
+        }}
+      />
       <Route path="/landing" component={LandingPage} />
       <Route path="/people" component={People} />
       <Route path="/result" component={FinalResult} />

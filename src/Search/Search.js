@@ -104,22 +104,6 @@ export function Search() {
         handleSubmit={handleSubmit}
       />
 
-      {/* <div className={`${styles["flexbox"]}`}>
-        <div className={styles["heading"]}>Choose your 5 best restaurants</div>
-
-        <button
-          className={`button is-info ${styles["submit-button"]}`}
-          onClick={(e) => {
-            handleSubmit(e);
-            search();
-          }}
-        >
-          <span>Next User</span>
-          <span className="icon">
-            <i className="fas fa-chevron-right"></i>
-          </span>
-        </button>
-      </div> */}
       <SearchResults businesses={businesses} handleSubmit={handleSubmit} />
       <Pagination
         nextPage={nextPage}

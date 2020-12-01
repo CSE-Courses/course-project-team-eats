@@ -4,13 +4,26 @@
   margin: 100px 0;
 }
 
+.heading {
+  color: black;
+  font-size: 30px;
+}
+
 .search-area {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.body {
+  padding: 0;
+  margin: 0;
+  background-color: #6a1b9a;
+}
+
 .landing {
   display: flex;
   justify-content: center;
+  background-color: #6a1b9a;
+  padding-bottom: 13.5rem;
 }

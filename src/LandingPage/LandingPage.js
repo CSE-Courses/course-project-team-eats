@@ -1,5 +1,5 @@
 import React from "react";
-//import { TopNav } from "./TopNav/TopNav";
+import { TopNav } from "./TopNav/TopNav";
 import logo from "../assets/logo.png";
 import styles from "./LandingPage.module.css";
 import { SearchBar } from "../SearchBar/SearchBar";
@@ -19,15 +19,17 @@ export function LandingPage() {
   }
 
   return (
-    <div className={styles.landing}>
-      <div className={styles["search-area"]}>
-        {/* <TopNav /> */}
-        <Link to="/">
-          {" "}
-          <img src={logo} className={styles.logo} alt="logo"></img>{" "}
-        </Link>
-        <SearchBar search={search} />
-        <SearchSuggestions search={search} />
+    <div className={styles["body"]}>
+      <div className={styles.landing}>
+        <div className={styles["search-area"]}>
+          <TopNav />
+          <Link to="/">
+            {" "}
+            <img src={logo} className={styles.logo} alt="logo"></img>{" "}
+          </Link>
+          <SearchBar search={search} />
+          <SearchSuggestions search={search} />
+        </div>
       </div>
     </div>
   );

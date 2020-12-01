@@ -16,8 +16,13 @@ export function NavBar(props) {
         location={props.location}
         search={props.search}
       />
-      {/* <button className={`button ${styles['nav-button']}`}>Sign In</button>
-            <button className={`button ${styles['nav-button']}`}>Register</button> */}
+      <Link to="/dashboard">
+        <button className={`button ${styles["nav-button"]}`}>
+          {" "}
+          <i className={`fas fa-user ${styles["profile-icon"]}`}></i>
+          <span>View Profile</span>
+        </button>
+      </Link>
     </div>
   );
 }

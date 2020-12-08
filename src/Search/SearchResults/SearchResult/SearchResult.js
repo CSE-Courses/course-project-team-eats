@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BusinessRating } from "../../../BusinessRating/BusinessRating";
 import styles from "./SearchResult.module.css";
-//import $ from "jquery";
+//import axios from 'axios';
 
 const initialList = [
   {
@@ -53,13 +53,16 @@ export function SearchResult(props) {
   const postData = async (businessName) => {
     var restaurant = businessName;
     console.log(JSON.stringify(restaurant));
-    await fetch("http://localhost:5000/restaurants/add_restaurant", {
-      method: "POST",
-      headers: {
-        "Content-Type": "text/html",
-      },
-      body: restaurant,
-    })
+    await fetch(
+      "https://sleepy-scrubland-97776.herokuapp.com/restaurants/add_restaurant",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/html",
+        },
+        body: restaurant,
+      }
+    )
       .then((response) => response.json())
       .then((response) => console.log(response))
       .catch((err) => console.error("Error" + err));

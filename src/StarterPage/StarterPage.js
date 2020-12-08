@@ -13,13 +13,13 @@ export function StarterPage() {
           <img src={logo} className={styles.logo} alt="logo"></img>{" "}
         </Link>
         <div className={styles["buttons"]}>
-          <Link to="/people">
+          <Link to="/register">
             {" "}
             <button className={`button is-info  ${styles["start-button"]}`}>
               Get started
             </button>
           </Link>
-          <Link to="/welcome">
+          <Link to="/login">
             <button class="button is-primary is-outlined">Login</button>
           </Link>
         </div>

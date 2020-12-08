@@ -14,28 +14,32 @@ function App() {
       <Route
         path="/welcome"
         component={() => {
-          window.location.href = "http://localhost:5000/welcome";
+          window.location.href =
+            "https://sleepy-scrubland-97776.herokuapp.com/welcome";
           return null;
         }}
       />
       <Route
         path="/dashboard"
         component={() => {
-          window.location.href = "http://localhost:5000/dashboard";
+          window.location.href =
+            "https://sleepy-scrubland-97776.herokuapp.com/dashboard";
           return null;
         }}
       />
       <Route
         path="/register"
         component={() => {
-          window.location.href = "http://localhost:5000/users/register";
+          window.location.href =
+            "https://sleepy-scrubland-97776.herokuapp.com/users/register";
           return null;
         }}
       />
       <Route
         path="/login"
         component={() => {
-          window.location.href = "http://localhost:5000/users/login";
+          window.location.href =
+            "https://sleepy-scrubland-97776.herokuapp.com/users/login";
           return null;
         }}
       />

@@ -8,8 +8,7 @@ function App() {
             <header className="App-header">
                 <div className={styles['block']}>
                     <img src={logo} className={styles.logo} alt="logo"/>
-                    <p className={styles.paragraph}>Here's our restaurant recommendation:</p>
-                    <p className={styles.winner}>404 NOT FOUND</p>
+                    <p className={styles.paragraph}>Thank you for using Eats!</p>
                     <div className={styles['parent-block']}>
                     <a
                         className={styles.restart}

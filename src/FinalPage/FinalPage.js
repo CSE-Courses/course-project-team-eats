@@ -9,7 +9,7 @@ function App() {
                 <div className={styles['block']}>
                     <img src={logo} className={styles.logo} alt="logo"/>
                     <p className={styles.paragraph}>Here's our restaurant recommendation:</p>
-                    <p className={styles.winner}>Duff's Famous Wings</p>
+                    <p className={styles.winner}>404 NOT FOUND</p>
                     <div className={styles['parent-block']}>
                     <a
                         className={styles.restart}
@@ -19,15 +19,7 @@ function App() {
                     >
                         Retake ↻
                     </a>
-                    <a
-                        className={styles.menu}
-                        href="https://static1.squarespace.com/static/52ddad0ae4b01d8ef4e51a2e/t/5eac9828c4b8ff78fae0348f/1588369460308/Amherst_TakeOut_Feb2020.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Open Menu
-                    </a>
-                        </div>
+                    </div>
                 </div>
             </header>
         </div>

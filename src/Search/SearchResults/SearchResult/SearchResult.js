@@ -39,7 +39,7 @@ export function SearchResult(props) {
   const deleteData = async (restaurantDeleted) => {
     const restaurant = restaurantDeleted;
     console.log(restaurant);
-    fetch("http://localhost:5000/restaurants/delete", {
+    fetch("y-scrubland-97776.herokuapp.com/restaurants/delete", {
       method: "DELETE",
       headers: {
         "Content-Type": "text/html",
@@ -54,7 +54,7 @@ export function SearchResult(props) {
     var restaurant = businessName;
     console.log(JSON.stringify(restaurant));
     await fetch(
-      "https://sleepy-scrubland-97776.herokuapp.com/restaurants/add_restaurant",
+      "https://ancient-hollows-62522.herokuapp.com/add_restaurant",
       {
         method: "POST",
         headers: {

@@ -228,6 +228,11 @@ export function SearchResultsSummary(props) {
           title="Disabled button"
           onClick={(e) => {
             console.log("Submit button works");
+            window.open(
+              "https://ancient-hollows-62522.herokuapp.com",
+              "_blank"
+            );
+            e.preventDefault();
           }}
         >
           Submit

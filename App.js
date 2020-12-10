@@ -9,6 +9,7 @@ import Login from "./components/login.component";
 import TextUser from "./TextField/text_field";
 import Home from "./components/Signup";
 import Finale from "./FinalPage/FinalPage"
+import LoadScreen from "./Loading/LoadScreen"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/sign-in' component={Login}/>
         <Route path='/Home' component={Home}/>
         <Route path='/Finale' component={Finale}/>
+     <Route path='/Loading' component={LoadScreen}/>
 
     </Switch>
 

@@ -57,19 +57,19 @@ export function SearchSuggestions(props) {
     }
   }
 
-  // getCoordinates();
+  getCoordinates();
 
   function searchDelivery() {
     const term = "Delivery";
-    const location = getCoordinates();
+    //const location = getCoordinates();
 
     props.search(term, location);
   }
 
   function searchNightlife() {
     const term = "Nightlife";
-    // getCoordinates();
-    const location = getCoordinates();
+//      getCoordinates();
+//     const location = getCoordinates();
 
     props.search(term, location);
   }
@@ -77,7 +77,7 @@ export function SearchSuggestions(props) {
   function searchRestaurants() {
     const term = "Restaurants";
     // getCoordinates();
-    const location = getCoordinates();
+//     const location = getCoordinates();
 
     props.search(term, location);
   }
@@ -85,7 +85,7 @@ export function SearchSuggestions(props) {
   function searchServices() {
     const term = "Services";
     // getCoordinates();
-    const location = getCoordinates();
+//     const location = getCoordinates();
 
     props.search(term, location);
   }
@@ -95,28 +95,37 @@ export function SearchSuggestions(props) {
       <span className="icon is-small">
         <i className="fas fa-utensils"></i>
       </span>
-      <span className={styles.suggestion} onClick={() => searchRestaurants()}>
+      <span className={styles.suggestion} onClick={() => {
+          var location = "Buffalo";
+          searchRestaurants(location);
+        }}>
         Restaurants
       </span>
 
       <span className="icon is-small">
         <i className="fas fa-cocktail"></i>
       </span>
-      <span className={styles.suggestion} onClick={() => searchNightlife()}>
+      <span className={styles.suggestion} onClick={() => var location = "Buffalo";
+          searchNightlife(location);
+        }}>
         Nightlife
       </span>
 
       <span className="icon is-small">
         <i className="fas fa-concierge-bell"></i>
       </span>
-      <span className={styles.suggestion} onClick={() => searchServices()}>
+      <span className={styles.suggestion} onClick={() => var location = "Buffalo";
+          searchServices(location);
+        }}>
         Services
       </span>
 
       <span className="icon is-small">
         <i className="fas fa-truck"></i>
       </span>
-      <span className={styles.suggestion} onClick={() => searchDelivery()}>
+      <span className={styles.suggestion} onClick={() => var location = "Buffalo";
+          searchDelivery(location);
+        }}>
         Delivery Services
       </span>
     </div>

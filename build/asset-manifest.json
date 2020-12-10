@@ -1,29 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.06449316.chunk.css",
-    "main.js": "/static/js/main.2c867468.chunk.js",
-    "main.js.map": "/static/js/main.2c867468.chunk.js.map",
+    "main.css": "/static/css/main.35ba1b94.chunk.css",
+    "main.js": "/static/js/main.9af64676.chunk.js",
+    "main.js.map": "/static/js/main.9af64676.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b267f0fc.js",
     "runtime-main.js.map": "/static/js/runtime-main.b267f0fc.js.map",
-    "static/css/2.2a86faee.chunk.css": "/static/css/2.2a86faee.chunk.css",
-    "static/js/2.dc366d79.chunk.js": "/static/js/2.dc366d79.chunk.js",
-    "static/js/2.dc366d79.chunk.js.map": "/static/js/2.dc366d79.chunk.js.map",
+    "static/js/2.55ac03a1.chunk.js": "/static/js/2.55ac03a1.chunk.js",
+    "static/js/2.55ac03a1.chunk.js.map": "/static/js/2.55ac03a1.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.e3a60105ece61227a38966039c0a2462.js": "/precache-manifest.e3a60105ece61227a38966039c0a2462.js",
+    "precache-manifest.5db38c48c58e388817a5e8797426c285.js": "/precache-manifest.5db38c48c58e388817a5e8797426c285.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.2a86faee.chunk.css.map": "/static/css/2.2a86faee.chunk.css.map",
-    "static/css/main.06449316.chunk.css.map": "/static/css/main.06449316.chunk.css.map",
-    "static/js/2.dc366d79.chunk.js.LICENSE.txt": "/static/js/2.dc366d79.chunk.js.LICENSE.txt",
-    "static/media/final_page.module.css": "/static/media/final_page_image.b7794ae7.jpeg",
-    "static/media/logo.png": "/static/media/logo.bc0e3de5.png",
-    "static/media/StarterPage.module.css": "/static/media/starter_image.90bd2015.jpg",
-    "static/media/text_field.module.css": "/static/media/text_field_image.1e4ffc0c.jpg"
+    "static/css/main.35ba1b94.chunk.css.map": "/static/css/main.35ba1b94.chunk.css.map",
+    "static/js/2.55ac03a1.chunk.js.LICENSE.txt": "/static/js/2.55ac03a1.chunk.js.LICENSE.txt",
+    "static/media/friends.png": "/static/media/friends.34b890ab.png",
+    "static/media/logo.png": "/static/media/logo.66422306.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b267f0fc.js",
-    "static/css/2.2a86faee.chunk.css",
-    "static/js/2.dc366d79.chunk.js",
-    "static/css/main.06449316.chunk.css",
-    "static/js/main.2c867468.chunk.js"
+    "static/js/2.55ac03a1.chunk.js",
+    "static/css/main.35ba1b94.chunk.css",
+    "static/js/main.9af64676.chunk.js"
   ]
 }

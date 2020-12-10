@@ -6,7 +6,7 @@
 }
 
 .search-result:hover {
-  outline: 2px solid black;
+  outline: 1px solid #212121;
   cursor: pointer;
 }
 

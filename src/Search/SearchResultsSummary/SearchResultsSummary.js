@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import {Link } from 'react-router-dom';
 import styles from "./SearchResultsSummary.module.css";
 
 export function SearchResultsSummary(props) {
@@ -210,22 +209,21 @@ export function SearchResultsSummary(props) {
           <span className="icon">
             <i className="fas fa-minus-circle"></i>
           </span>
-          <span>Clear filter</span>
+          <span>Clear filters</span>
         </button>
 
-        {/* <button
+        <button
           className={`button is-info  ${styles["nextUser-button"]}`}
           onClick={(e) => {
             props.search(props.term, props.location);
-            setCounter(i++);
           }}
         >
           <span>Next User</span>
           <span className="icon">
             <i className="fas fa-chevron-right"></i>
           </span>
-        </button> */}
-        <Link to = '/Finale'> <button
+        </button>
+        <button
           className={`button is-warning ${styles["submit-button"]}`}
           title="Disabled button"
           onClick={(e) => {
@@ -233,7 +231,7 @@ export function SearchResultsSummary(props) {
           }}
         >
           Submit
-        </button></Link>
+        </button>
       </div>
     </div>
   );

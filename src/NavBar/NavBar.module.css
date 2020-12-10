@@ -1,18 +1,21 @@
-.nav-bar{
-    display: flex;
-    background:#00B0FF;
-    padding: 1rem 0;
-    align-items: center;
-    justify-content: center;
+.nav-bar {
+  display: flex;
+  background: #e8eaf6;
+  padding: 1rem 0;
+  align-items: center;
+  justify-content: center;
 }
 
-.logo{
-    width: 80px;
-    height:35px;
-    margin-right: 1rem;
-
+.logo {
+  width: 80px;
+  height: 35px;
+  margin-right: 1rem;
 }
 
-:global(.button).nav-button{
-    margin-left: 1rem;
+.profile-icon {
+  margin-right: 0.5rem;
+}
+
+:global(.button).nav-button {
+  margin-left: 1rem;
 }

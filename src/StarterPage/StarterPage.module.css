@@ -1,38 +1,86 @@
-.body{
-   
-    background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('../assets/starter_image.jpg') ;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-
+.body {
+  /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../assets/starter_image.jpg"); */
+  background-color: #242582;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
 }
 
-.block{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 10% 0;
+.hr {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.paragraph{
-    font-size: 25px;
-    font-family: 'Avenir';
-    color: white;
-    
+.friends-image {
+  width: 500px;
+  height: 300px;
 }
 
-.start-button{
-    width: 300px;
-    margin: 10% 0;
-    
+.topNav {
+  margin: 2% 0;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.logo{
-    width: 150px;
-    margin: 2% 0;
-    margin-left: 2%;
+.image-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.heading-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10% 0;
+}
+
+.heading-first {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.paragraph-first {
+  color: white;
+  font-size: 25px;
+}
+
+.paragraph-second {
+  margin: 2% 0;
+  font-size: 25px;
+  font-family: "Avenir";
+  color: white;
+}
+
+.start-button {
+  right: 10%;
+  width: 200px;
+}
+
+.logo {
+  width: 150px;
+  margin: 2% 0;
+  margin-left: 2%;
 }

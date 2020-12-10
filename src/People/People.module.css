@@ -3,9 +3,9 @@
 }
 
 .body {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../assets/starter_image.jpg");
-  background-color: black;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/starter_image.jpg"); */
+  background-color: #651fff;
   position: fixed;
   top: 0;
   width: 100%;
@@ -42,7 +42,8 @@
 }
 
 .paragraph {
-  font-size: 25px;
+  font-weight: bold;
+  font-size: 30px;
   font-family: "Avenir";
   color: white;
 }

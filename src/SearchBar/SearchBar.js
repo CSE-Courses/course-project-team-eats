@@ -27,7 +27,7 @@ export function SearchBar(props) {
             onChange={(e) => setTerm(e.target.value)}
             type="text"
             value={term}
-            placeholder="Search your favorite food"
+            placeholder="Pizza,Pasta,Dumplings...."
           />
         </div>
 
@@ -41,7 +41,7 @@ export function SearchBar(props) {
             onChange={(e) => setLocation(e.target.value)}
             type="text"
             value={location}
-            placeholder="Set your location"
+            placeholder="San Francisco,Boston,Denver... "
           />
         </div>
         <div

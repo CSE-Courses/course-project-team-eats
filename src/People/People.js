@@ -24,6 +24,9 @@ export function People() {
       </Link>
 
       <div className={styles["parent-block"]}>
+        <p className={styles.paragraph}>
+          Quick question before we get started....
+        </p>
         <p className={styles.paragraph}>How many are going to eat?</p>
         <div classNameName={styles.block}>
           <Link to="/landing">

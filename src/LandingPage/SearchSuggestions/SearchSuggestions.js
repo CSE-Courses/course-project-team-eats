@@ -36,7 +36,7 @@ export function SearchSuggestions(props) {
     // Paste your LocationIQ token below.
     xhr.open(
       "GET",
-      "https://us1.locationiq.com/v1/reverse.php?key=YOUR_PRIVATE_TOKEN&lat=" +
+      "https://us1.locationiq.com/v1/reverse.php?key=pk.b24de00592d24dc3d0d995524118904a&lat=" +
         lat +
         "&lon=" +
         lng +
@@ -57,7 +57,7 @@ export function SearchSuggestions(props) {
     }
   }
 
-  //   getCoordintes();
+  // getCoordinates();
 
   function searchDelivery() {
     const term = "Delivery";
@@ -68,6 +68,7 @@ export function SearchSuggestions(props) {
 
   function searchNightlife() {
     const term = "Nightlife";
+    // getCoordinates();
     const location = getCoordinates();
 
     props.search(term, location);
@@ -75,6 +76,7 @@ export function SearchSuggestions(props) {
 
   function searchRestaurants() {
     const term = "Restaurants";
+    // getCoordinates();
     const location = getCoordinates();
 
     props.search(term, location);
@@ -82,6 +84,7 @@ export function SearchSuggestions(props) {
 
   function searchServices() {
     const term = "Services";
+    // getCoordinates();
     const location = getCoordinates();
 
     props.search(term, location);
